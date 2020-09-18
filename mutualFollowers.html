@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<body>
+<input type="text" id = "followers1">
+<input type="text" id = "followers2">
+<button onclick="checkForFollowers()"> Check </button>
+
+<p id = "followerResults"> </p>
+
+
+
+    <script>
+function checkForFollowers(){
+    let followers1 = document.getElementById("followers1").value;
+    let followers2 = document.getElementById("followers1").value;
+    let followerResults = document.getElementById("followerResults");
+
+    let whoFollowsWho = [];
+
+    for(let i = 0; i < followers1.length; i ++){
+        for (let j = 0; j < followers2.length; j++){
+            if (followers1[i] === followers2[j]){
+                whoFollowsWho.push(followers2[i]);
+                followerResults.innerText =   `The mutuals are ${whoFollowsWho}`
+                
+            }
+        }
+    }
+}
+/*
+const bobsFollowers = ['a','b','c','d'];
+const tinasFollowers = ['1','c','d'];
+const mutualFollowers = [];
+
+for (var i = 0; i < bobsFollowers.length; i++){
+    for (var j = 0; j < tinasFollowers.length; j++){
+        if(bobsFollowers[i] === tinasFollowers[j]){
+            mutualFollowers.push(tinasFollowers[j]);
+        }
+    }
+}
+mutalFollowers; // [c,d]
+
+*/
+
+    </script>
+</body>
